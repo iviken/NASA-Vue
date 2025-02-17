@@ -1,0 +1,153 @@
+// colors
+
+$color-light: #9b9b9b;
+$color-lighter: rgb(220, 220, 220);
+$color-dark: #242424;
+$color-darker: #000000;
+$color-light-asteroid-hazard: #8f6868;
+$color-dark-asteroid-hazard: #432c2c;
+$dayLogoPath: url('../assets/menu-logo-day.png');
+$nightLogoPath: url("../assets/menu-logo-night.png");
+
+// Mixins
+
+@mixin border-light {
+    border: 1px solid $color-light;
+}
+
+@mixin border-lighter {
+    border: 1px solid $color-lighter;
+}
+
+@mixin border-dark {
+    border: 1px solid $color-dark;
+}
+
+@mixin border-darker {
+    border: 1px solid $color-darker;
+}
+
+// Light theme
+
+@media (prefers-color-scheme: light) {
+
+    body,
+    input,
+    textarea,
+    select,
+    button,
+    header {
+        color: $color-dark;
+        background-color: $color-light;
+    }
+
+    button {
+        @include border-dark;
+
+        &:hover {
+            @include border-darker;
+        }
+    }
+
+    .menuBlock {
+        border-bottom: solid $color-dark;
+        background-image: $dayLogoPath;
+        background-repeat: no-repeat;
+    }
+
+    a {
+        color: $color-dark;
+
+        &:hover {
+            color: $color-darker;
+        }
+    }
+
+    .dataBox {
+        border-top: solid 1px $color-dark;
+        border-bottom: solid 1px $color-dark;
+        &:hover {
+            border-top: solid 1px $color-darker;
+            border-bottom: solid 1px $color-darker;
+        }
+    }
+
+    .dataBox>div {
+        @include border-dark;
+    }
+
+    .dataBox_fullBorder {
+        @include border-dark;
+
+        &:hover {
+            @include border-darker;
+        }
+    }
+
+    .hazard {
+        background-color: $color-light-asteroid-hazard;
+    }
+}
+
+// Dark theme
+
+@media (prefers-color-scheme: dark) {
+
+    body,
+    input,
+    textarea,
+    select,
+    button,
+    header {
+        color: $color-light;
+        background-color: $color-dark;
+    }
+
+    button {
+        @include border-light;
+
+        &:hover {
+            @include border-lighter;
+        }
+    }
+
+    .menuBlock {
+        border-bottom: solid $color-light;
+        background-image: $nightLogoPath;
+        background-repeat: no-repeat;
+    }
+
+    a {
+        color: $color-light;
+
+        &:hover {
+            color: $color-lighter;
+        }
+    }
+
+    .dataBox {
+        border-top: solid 1px $color-light;
+        border-bottom: solid 1px $color-light;
+
+        &:hover {
+            border-top: solid 1px $color-lighter;
+            border-bottom: solid 1px $color-lighter;
+        }
+    }
+
+    .dataBox>div {
+        @include border-light;
+    }
+
+    .dataBox_fullBorder {
+        @include border-light;
+
+        &:hover {
+            @include border-lighter;
+        }
+    }
+
+    .hazard {
+        background-color: $color-dark-asteroid-hazard;
+    }
+}

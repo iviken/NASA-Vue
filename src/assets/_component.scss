@@ -1,0 +1,54 @@
+@import '../assets/variables';
+
+.section{
+  text-align: center;
+}
+
+.box{
+  overflow: scroll;
+}
+
+ul, li{
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* desktop */
+@media screen and (min-width: 1200px) {
+
+  button, .section>label{
+    margin: 0px $Component-form-label-margin_desktop;
+  }
+
+  .box{
+    height: $data-box-height_desktop;
+  }
+  
+}
+
+/* mobile */
+@media screen and (max-width: 1199px) {
+
+  .section{
+    display: flex;
+    flex-direction: column;
+  }
+
+  button, .section>label{
+    /* margin-top: 20px; */
+    margin: $Component-form-label-margin_mobile;
+  }
+
+  .box {
+    height: $data-box-height_mobile;
+  }
+
+}

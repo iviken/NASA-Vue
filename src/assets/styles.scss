@@ -1,0 +1,78 @@
+@import 'colors';
+@import 'variables';
+@import 'component';
+
+#app {}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.hello-text{
+    font-size: $hello-font-size;
+    font-weight: $hello-font-weight;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+button {
+    padding: $button-padding;
+    font-size: $button-font-size;
+    font-weight: $button-font-weight;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* desktop */
+@media screen and (min-width: 1200px) {
+    body {
+        margin: 0px;
+    }
+
+    .block {
+        padding: $block-padding_desktop;
+    }
+
+    .expand {
+        display: none;
+    }
+
+    .logicSection {
+        padding-top: $section-padding_desktop;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 1199px) {
+
+    .block {
+        padding: $block-padding_mobile;
+    }
+
+    body,
+    textarea,
+    input,
+    select {
+        font-size: $font-size_mobile;
+    }
+
+    // input[type="date"]::-webkit-calendar-picker-indicator {
+    //     color: aquamarine;
+    //     font-size: xx-large;
+    // }
+
+    .expand {
+        padding: 0px 10px;
+    }
+
+    .logicSection {
+        padding-top: $section-padding_mobile;
+    }
+}
